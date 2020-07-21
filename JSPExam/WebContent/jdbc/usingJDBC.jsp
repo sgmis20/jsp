@@ -52,8 +52,38 @@
     <td><strong>ZIPCODE/ADDRESS</strong></td>
     <td><strong>JOB</strong></td>
  </tr>
+ <%
+      if(rs != null) {
+    	 while(rs.next()) {  
+    		 id=rs.getString("id");
+    		 passwd=rs.getString("passwd");
+    		 name=rs.getString("name");
+    		 mem_num1=rs.getString("mem_num1");
+    		 mem_num2=rs.getString("mem_num2");
+    		 e_mail=rs.getString("e_mail");
+    		 phone=rs.getString("phone");
+    		 zipcode=rs.getString("zipcode");
+    		 address=rs.getString("address");
+    		 job=rs.getString("job");
  
+ %>
+ <tr>
+ <td><%=id %></td>
+  <td><%=passwd %></td>
+   <td><%=name %></td>
+    <td><%=mem_num1 %></td>
+     <td><%=mem_num2 %></td>
+      <td><%=e_mail %></td>
+       <td><%=phone %></td>
+        <td><%=zipcode %>/<%=address %></td>
+         <td><%=job %></td>
+ <%
+         counter++;
+    	 }// end while
+      }// end if
+ %>
  
+ </tr>
  
  
  
