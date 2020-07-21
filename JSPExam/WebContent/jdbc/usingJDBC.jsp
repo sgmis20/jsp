@@ -24,9 +24,9 @@
     try {
         con =DriverManager.getConnection(
         		"jdbc:oracle:thin:@localhost:1521:orcl",
-        		"scott", "tiger");
+        		"SCOTT", "tiger");
         stmt = con.createStatement();
-        rs = stmt.executeQuery("select * from tempmember");
+        rs = stmt.executeQuery("SELECT * FROM tempmember");
    
    %>
     
@@ -39,7 +39,7 @@
 </head>
 <body bgcolor="#FFFFCC">
  <h2> JSP에서 데이터베이스 연동 </h2><br><br>
- <h3> 회원정보 </h3>
+ <h3> 회원 정보 </h3>
  <table bordercolor="#0000FF" border="1">
  <tr>
     <td><strong>ID</strong></td>
