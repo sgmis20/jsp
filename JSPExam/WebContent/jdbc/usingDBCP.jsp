@@ -33,30 +33,28 @@
 		<jsp:useBean id="dao" class="jdbc.tempMemberDAO" scope="page" />
 
 		<%
-			Vector<tempMemberVO> vlist = dao.getMemberList();
-		int counter = vlist.size();
-
-		for (int i = 0; i < vlist.size(); i++) {
-			tempMemberVO vo = vlist.elementAt(i);
-		%>
+    Vector<tempMemberVO> vlist = dao.getMemberList();
+    int counter = vlist.size();
+    
+    for(int i =0;i<vlist.size(); i++) {
+       tempMemberVO vo = vlist.elementAt(i);
+%>
 		<tr>
-			<td><%=vo.getId()%></td>
-			<td><%=vo.getPasswd()%></td>
-			<td><%=vo.getName()%></td>
-			<td><%=vo.getMem_num1()%></td>
-			<td><%=vo.getMem_num2()%></td>
-			<td><%=vo.getEmail()%></td>
-			<td><%=vo.getPhone()%></td>
-			<td><%=vo.getZipcode()%>/<%=vo.getAddress()%></td>
-			<td><%=vo.getJob()%></td>
-			<%
-				}
-			%>
+			<td><%=vo.getId() %></td>
+			<td><%=vo.getPasswd() %></td>
+			<td><%=vo.getName() %></td>
+			<td><%=vo.getMem_num1() %></td>
+			<td><%=vo.getMem_num2() %></td>
+			<td><%=vo.getEmail() %></td>
+			<td><%=vo.getPhone() %></td>
+			<td><%=vo.getZipcode() %>/<%=vo.getAddress() %></td>
+			<td><%=vo.getJob() %></td>
+			<%} %>
 		</tr>
 	</table>
 	<br>
 	<br> total records :
-	<%=counter%>
+	<%=counter %>
 
 </body>
 </html>

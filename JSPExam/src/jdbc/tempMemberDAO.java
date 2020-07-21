@@ -1,25 +1,46 @@
 package jdbc;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Vector;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
 public class tempMemberDAO {
 
 	private final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
 	private final String JDBC_URL = "jdbc:oracle:thin:@localhost:1521:orcl";
-	private final String USER = "SCOTT";
+	private final String USER = "scott";
 	private final String PASS = "tiger";
 
 	public tempMemberDAO() {
 		try {
 			Class.forName(JDBC_DRIVER);
+
 		} catch (Exception e) {
-			System.out.println("Error : JDBC 드라이버 로딩 실패");
+			System.out.println("Error : JDBC driver 로딩 실패");
 		}
+	}
+
+	private Connection getConnection() {
+
+		Connection con = null;
+
+		try {
+			Context init = new InitialContext();
+			DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/mydb");
+
+			con = ds.getConnection();
+
+		} catch (Exception e) {
+			System.out.println("Connection 생성 실패");
+		}
+
+		return con;
 	}
 
 	public Vector<tempMemberVO> getMemberList() {
@@ -32,8 +53,9 @@ public class tempMemberDAO {
 
 		try {
 
-			con = DriverManager.getConnection(JDBC_URL, USER, PASS);
-			String strQuery = "SELECT * FROM tempMember";
+			// con = DriverManager.getConnection(JDBC_URL, USER, PASS);
+			con = getConnection();
+			String strQuery = "select * from tempMember";
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(strQuery);
 
@@ -60,21 +82,18 @@ public class tempMemberDAO {
 				try {
 					rs.close();
 				} catch (SQLException se) {
-					se.printStackTrace();
 				}
 			;
 			if (stmt != null)
 				try {
 					stmt.close();
 				} catch (SQLException se) {
-					se.printStackTrace();
 				}
 			;
 			if (con != null)
 				try {
 					con.close();
 				} catch (SQLException se) {
-					se.printStackTrace();
 				}
 			;
 		}
