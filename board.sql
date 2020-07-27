@@ -2,10 +2,10 @@
 
 CREATE TABLE board (
 num NUMBER(7) NOT NULL ENABLE, -- 글 번호
-writer VARCHAR2(12) NOT NULL ENABLE, -- 작성자
-email VARCHAR2(30) NOT NULL ENABLE, -- 이메일
-subject VARCHAR2(50) NOT NULL ENABLE, -- 제목
-pass VARCHAR2(10) NOT NULL ENABLE, -- 글에 대한 비밀번호
+writer VARCHAR2(30) NOT NULL ENABLE, -- 작성자
+email VARCHAR2(40) NOT NULL ENABLE, -- 이메일
+subject VARCHAR2(200) NOT NULL ENABLE, -- 제목
+pass VARCHAR2(40) NOT NULL ENABLE, -- 글에 대한 비밀번호
 readcount NUMBER(5) DEFAULT 0 NOT NULL ENABLE, -- 조회수
 ref NUMBER(5) DEFAULT 0 NOT NULL ENABLE, -- 들여쓰기 1/3
 step NUMBER(3) DEFAULT 0 NOT NULL ENABLE,  -- 들여쓰기 2/3 
@@ -15,6 +15,8 @@ content VARCHAR2(4000) NOT NULL ENABLE, -- 내용
 ip VARCHAR2(20) NOT NULL ENABLE, -- 작성 컴퓨터의 ID
 CONSTRAINT board_pk PRIMARY KEY(NUM) ENABLE -- 번호를 기본키로 설정하여 활용
 );
+
+
 
 SELECT * FROM board;
 

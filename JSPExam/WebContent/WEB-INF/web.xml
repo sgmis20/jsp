@@ -57,12 +57,12 @@
        <url-pattern>/init</url-pattern>
   </servlet-mapping>
    -->
-   <!-- listener ë“±ë¡� -->
+   <!-- listener 등록 -->
   <!--  <listener>
       <listener-class>com.exam.ContextListenerImpl</listener-class>
    </listener> -->
   
-  <!-- Filter ë“±ë¡�  -->
+  <!-- Filter 등록  -->
   <!--
   <filter>
   <filter-name>myFilter</filter-name>
