@@ -159,7 +159,7 @@
       
             
            
-      <Context docBase="JSPExam" path="/JSPExam" reloadable="true" source="org.eclipse.jst.jee.server:JSPExam"/></Host>
+      <Context docBase="JSPExam" path="/JSPExam" reloadable="true" source="org.eclipse.jst.jee.server:JSPExam"/><Context docBase="practice" path="/practice" reloadable="true" source="org.eclipse.jst.jee.server:practice"/></Host>
     </Engine>
   </Service>
 </Server>

@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> user input </title>
+  </head>
+  <body>
+    	<form action="sample-response.jsp">
+	성 :  <input type="text" name="lastName"/>
+	<br><br>
+	이름 : <input type="text" name="firstName"/> 
+	<br><br>
+	거주지 : <select name="address">
+		<optgroup label="행정구역별">
+	<option>서울</option>
+	<option>경기도</option>
+	<option>충청도</option>
+	<option>경상도</option>
+	<option>전라도</option>
+	<option>제주도</option>
+	</optgroup>
+		<optgroup label="시/군">
+		<option>시</option>
+		<option>군</option>
+		</optgroup>
+	</select>
+		<br><br>
+	희망 지역: <br>
+	<input type="radio" name="favoredRegion" value="東京"/> 도쿄
+	<input type="radio" name="favoredRegion" value="大阪"/> 오사카
+	<input type="radio" name="favoredRegion" value="福岡"/> 후쿠오카
+	<input type="radio" name="favoredRegion" value="札幌"/> 삿포로
+	<input type="radio" name="favoredRegion" value="名古屋"/> 나고야
+	<input type="radio" name="favoredRegion" value="横浜"/> 요코하마
+	<input type="radio" name="favoredRegion" value="その他"/> 그 이외 지역
+	<br><br>
+	할 수 있는 분야: <br>
+	<input type="checkbox" name="skills" value="Java"/> Java
+	<input type="checkbox" name="skills" value="HTML"/> HTML
+	<input type="checkbox" name="skills" value="CSS"/> CSS
+	<input type="checkbox" name="skills" value="Javascript"/> Javascript
+	<input type="checkbox" name="skills" value="JSP"/> JSP
+	<input type="checkbox" name="skills" value="Spring"/> Spring
+	<input type="checkbox" name="skills" value="Node.js"/> Node.js
+	<input type="checkbox" name="skills" value="Python"/> Python
+	<br><br>
+	<input type="submit" value="Submit"/>
+	</form>
+  </body>
+</html>
