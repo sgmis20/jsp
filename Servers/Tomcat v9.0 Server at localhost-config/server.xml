@@ -159,7 +159,7 @@
       
             
            
-      <Context docBase="JSPExam" path="/JSPExam" reloadable="true" source="org.eclipse.jst.jee.server:JSPExam"/><Context docBase="practice" path="/practice" reloadable="true" source="org.eclipse.jst.jee.server:practice"/></Host>
+      <Context docBase="JSPExam" path="/JSPExam" reloadable="true" source="org.eclipse.jst.jee.server:JSPExam"/><Context docBase="servletdemo" path="/servletdemo" reloadable="true" source="org.eclipse.jst.jee.server:servletdemo"/><Context docBase="test" path="/test" reloadable="true" source="org.eclipse.jst.jee.server:test"/><Context docBase="board" path="/board" reloadable="true" source="org.eclipse.jst.jee.server:board"/><Context docBase="web-student-tracker-solution" path="/web-student-tracker-solution" reloadable="true" source="org.eclipse.jst.jee.server:web-student-tracker-solution"/><Context docBase="web-student-tracker" path="/web-student-tracker" reloadable="true" source="org.eclipse.jst.jee.server:web-student-tracker"/><Context docBase="practice" path="/practice" reloadable="true" source="org.eclipse.jst.jee.server:practice"/></Host>
     </Engine>
   </Service>
 </Server>

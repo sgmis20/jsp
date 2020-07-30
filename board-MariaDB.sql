@@ -1,0 +1,31 @@
+-- 게시판 DB 구축을 위해 board 테이블 생성
+
+CREATE TABLE board (
+num INTEGER(7) NOT NULL PRIMARY KEY AUTO_INCREMENT ENABLE, -- 글 번호
+writer VARCHAR(30) NOT NULL ENABLE, -- 작성자
+email VARCHAR(40) NOT NULL ENABLE, -- 이메일
+subject VARCHAR(200) NOT NULL ENABLE, -- 제목
+pass VARCHAR(40) NOT NULL ENABLE, -- 글에 대한 비밀번호
+readcount INTEGER(7) DEFAULT 0 NOT NULL ENABLE, -- 조회수
+ref INTEGER(5) DEFAULT 0 NOT NULL ENABLE, -- 들여쓰기 1/3
+step INTEGER(3) DEFAULT 0 NOT NULL ENABLE,  -- 들여쓰기 2/3
+depth INTEGER(3) DEFAULT 0 NOT NULL ENABLE, -- 들여쓰기 3/3
+regdate TIMESTAMP DEFAULT NOW(), -- 작성일
+content VARCHAR(4000) NOT NULL ENABLE, -- 내용
+ip VARCHAR(30) NOT NULL ENABLE, -- 작성 컴퓨터의 ID
+macAddress VARCHAR(30) ENABLE
+);
+
+
+
+SELECT * FROM board;
+
+-- board 테이블의 num 컬럼을 위한 시퀀스 생성
+CREATE SEQUENCE board_seq
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE
+NOCACHE
+NOCYCLE;
+
+

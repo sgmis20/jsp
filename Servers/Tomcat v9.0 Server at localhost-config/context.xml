@@ -39,4 +39,16 @@
  maxWaitMillis="-1"
 />  
 
+<Resource name="jdbc/mariadb"
+         auth="container"
+         type="javax.sql.DataSource"
+         driverClassName="org.mariadb.jdbc.Driver"
+         loginTimeout="10"
+         maxWait="5000"
+         testOnBorrow="true"
+         url="jdbc:mariadb://yorusung.cafe24.com:3306/yorusung"
+         username="yorusung"
+ 		 password="qlakdfhr8*"
+          />
+
 </Context>
