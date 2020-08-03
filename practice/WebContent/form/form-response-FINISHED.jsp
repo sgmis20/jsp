@@ -1,50 +1,24 @@
-<%@ page contentType="text/html; charset=UTF-8" %>  
-<%@page import="javax.security.auth.message.callback.PrivateKeyCallback.Request"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 
 <!DOCTYPE html>
 <html>
-  <head>
-     <meta charset="utf-8">
-    <title>주문식 햄버거</title>
-    <style>  
-    
-    img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    }
-    
-    img.patty{
-    border-top-style: solid;
-  	border-bottom-style: solid;
-  	border-color: white; 
-  	border-width: 1px;
-    }
-    
-    img.sauce{
-    display: inline-flex;
-    }
-    
-    .sauce{
-        border-style: dotted;
-    border-color: aqua;
-    border-width: 5px;
-    }
-    
-    .space{
-    margin-top: 5vh;
-    }
-    
-    </style>
-  </head>
-  <body>
+<head>
+<meta charset="utf-8">
+<title>주문식 햄버거</title>
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css"
+	href="./css/burger-response.css?v=1.3">
+</head>
+	<body>
 
 
-<%	 out.println("<div class=\"space\"></div>"); %>
-<%	 out.println("<section class=\"burger\">"); %>
-<!--  번 top -->
+	<%	 out.println("<h1> 주문하신 햄버거 나왔습니다~ </h1>"); %>
 
-	
+	<!--  번 top -->
+
+
 	<%
 	String bunTop = request.getParameter("bun");
 	switch(bunTop){
@@ -68,7 +42,7 @@
 		}
 	}
 	%>
-	
+
 	<!--  패티 갯수 -->
 	<%
 	String doneness = "0"+request.getParameter("doneness");
@@ -80,7 +54,7 @@
 		out.println(".png\" alt=\"patty with doneness\">");
 		count++;
 	}
-	
+
     %>
 
 	<!--  선택한 토핑 -->
@@ -89,17 +63,33 @@
     if (toppings != null) {
  		for(int i=0; i<toppings.length; i++){
  			if(toppings[i].equals("onion")){
- 				out.println("<img src=\"./images/onion.png\" alt=\"onion\">");	
+ 				out.println("<img src=\"./images/onion.png\" alt=\"onion\">");
  			}else if(toppings[i].equals("tomato")){
- 				out.println("<img src=\"./images/tomato.png\" alt=\"tomato\">");	
+ 				out.println("<img src=\"./images/tomato.png\" alt=\"tomato\">");
  			}else{ // lettuce
  				out.println("<img src=\"./images/lettuce.png\" alt=\"lettuce\">");
  			}
  		}
  	}
  	%>
-	
-	
+
+	<%
+	 String sauce = request.getParameter("sauce");
+	 out.println("<section class=\"sauce\">");
+	 switch(sauce){
+		case "ketchup":
+			out.println("<img src=\"./images/ketchup.png\" alt=\"ketchup\">");
+			break;
+		case "mayo":
+			out.println("<img src=\"./images/mayo.png\" alt=\"mayo\">");
+			break;
+		case "mustard":
+			out.println("<img src=\"./images/mustard.png\" alt=\"mustard\">");
+			break;
+		}
+	 out.println("</section>");
+	 %>
+
 	<!--  번 botton -->
 	<%
 	String bunBottom = request.getParameter("bun");
@@ -115,29 +105,9 @@
 		break;
 	}
 	%>
-	
-	
-	<%	 out.println("</section>"); %>
-	
-	<ul>
 
- 	</ul>
- 	
-	 <%
-	 String sauce = request.getParameter("sauce");
-	 out.println("<section class=\"sauce\">");
-	 switch(sauce){
-		case "ketchup":
-			out.println("<img src=\"./images/ketchup.jpg\" alt=\"ketchup\">");
-			break;
-		case "mayo":
-			out.println("<img src=\"./images/mayo.jpg\" alt=\"mayo\">");
-			break;
-		case "mustard":
-			out.println("<img src=\"./images/mustard.jpg\" alt=\"mustard\">");
-			break;
-		}
-	 out.println("</section>");
-	 %>
-  </body>
+
+	<h2><a href="./form-burger-FINISHED.html">햄버거 다시 주문하기</a></h2>
+
+	</body>
 </html>

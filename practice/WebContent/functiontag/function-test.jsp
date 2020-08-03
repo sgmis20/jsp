@@ -16,7 +16,6 @@ p{
 	display: inline-flex;
 	font-weight: bold;
 }
-
 </style>
 </head>
 <body>

@@ -1,0 +1,93 @@
+body {
+  background-color: rgb(165, 206, 207);
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+form {
+  text-align: center;
+  line-height: 30px;
+  height: 80%;
+  overflow: auto;
+}
+
+form hr {
+  width: 15%;
+}
+
+h1 {
+  text-align: center;
+}
+
+#burger {
+  max-height: 30%;
+}
+
+#overlay {
+  width: 80%;
+  margin: 3% auto;
+  padding-top: 1vh;
+  height: 95vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 40px;
+}
+
+#logo {
+  height: 100px;
+  display: block;
+  margin: auto;
+  filter: invert(35%);
+}
+
+.toppings label,
+.cheesy label {
+  margin-right: 25px;
+}
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  body {
+    background-color: rgb(189, 140, 150);
+    font-family: Rubik, Arial;
+  }
+
+  form {
+    text-align: center;
+    line-height: 4vh;
+    height: 95%;
+    overflow: auto;
+  }
+
+  form hr {
+    width: 18%;
+  }
+
+  h1 {
+    font-size: 4.5vw;
+  }
+
+  #burger {
+    max-height: 30%;
+  }
+
+  #overlay {
+    padding-top: 1.5vh;
+    height: 85vh;
+    border-radius: 3rem;
+  }
+
+  #logo {
+    height: 7rem;
+  }
+
+  select,
+  input,
+  label,
+  span,
+  datalist {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 2.8vw;
+  }
+
+  .submission {
+    margin-top: 2vh;
+  }
+}
