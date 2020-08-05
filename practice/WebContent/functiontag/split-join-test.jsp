@@ -4,7 +4,7 @@
 
 <html>
 <head>
-<title>split, join</title>
+<title>function tag 02 - split, join</title>
 <style>
 body{
 	background-color: #2D3842;
@@ -14,7 +14,6 @@ body{
 h3{
 	color: #DBD1A7;
 }
-
 </style>
 </head>
 <body>

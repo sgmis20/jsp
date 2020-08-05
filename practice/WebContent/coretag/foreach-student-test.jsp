@@ -1,35 +1,39 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<%@ page import="java.util.*,tagdemo.Student" %>
+<%@ page import="java.util.*, tagdemo.Student" %>
 
 <%
-	// just create some sample data ... normally provided by MVC
-	List<Student> data = new ArrayList<>();
+	//간단한 예제 구성을 위해 샘플 데이터 생성
+	ArrayList<Student> studentList = new ArrayList<>();
 
-	data.add(new Student("John", "Doe", false));
-	data.add(new Student("Maxwell", "Johnson", false));
-	data.add(new Student("Mary", "Public", true));
+	studentList.add(new Student("병후", "김", false));
+	studentList.add(new Student("효근", "최", false));
+	studentList.add(new Student("유경", "오", true));
+	studentList.add(new Student("상원", "이", true));
 
-	pageContext.setAttribute("myStudents", data);
+	pageContext.setAttribute("myStudents", studentList);
 %>
 
 <html>
-
+<head>
+<title>JSTL core 03</title>
+<link rel="stylesheet" href="./style.css">
+</head>
 <body>
-	<table border="1">
+	<table>
 
 	<tr>
-		<th>First Name</th>
-		<th>Last Name</th>
-		<th>Gold Customer</th>
+		<th>성</th>
+		<th>이름</th>
+		<th>골드회원</th>
 	</tr>
 	
 	<c:forEach var="tempStudent" items="${myStudents}">
 		
 		<tr>
-			<td>${tempStudent.firstName}</td>
 			<td>${tempStudent.lastName}</td>
+			<td>${tempStudent.firstName}</td>
 			<td>${tempStudent.goldCustomer}</td> 
 		</tr>
 		

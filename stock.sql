@@ -1,0 +1,26 @@
+-- 차트 데이터 (chart data)
+
+CREATE TABLE stock (
+num NUMBER(5) NOT NULL ENABLE,
+value NUMBER(5) DEFAULT 0 NOT NULL ENABLE,
+CONSTRAINT stock_pk PRIMARY KEY(num) ENABLE
+);
+
+-- 임의의 데이터 10개 추가
+
+
+INSERT ALL
+INTO stock VALUES(1, 390)
+INTO stock VALUES(2, 350)
+INTO stock VALUES(3, 370)
+INTO stock VALUES(4, 325)
+INTO stock VALUES(5, 425)
+INTO stock VALUES(6, 440)
+INTO stock VALUES(7, 480)
+INTO stock VALUES(8, 514)
+INTO stock VALUES(9, 520)
+INTO stock VALUES(10, 615)
+SELECT * FROM DUAL;
+
+
+SELECT * FROM stock;

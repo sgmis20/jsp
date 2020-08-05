@@ -3,14 +3,15 @@
 
 <html>
 <head>
-<title>core tag 1</title>
+<title>JSTL core 01</title>
+<link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-<c:set var="time" value="<%= new java.util.Date() %>" />
+<!-- 	c:set 태그 :  JSP 교재 296~298 페이지 참고 	-->
+<c:set var = "serverTime" value="<%= new java.util.Date() %>" />
 
-현재 서버 시각 :  ${time}
+<p>현재 서버 시각  :   ${serverTime} </p>
 
 </body>
-
 </html>

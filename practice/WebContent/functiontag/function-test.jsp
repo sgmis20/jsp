@@ -4,7 +4,7 @@
 
 <html>
 <head>
-<title>function tag</title>
+<title>function tag 01</title>
 <style>
 body{
 	background-color: #2D3842;
@@ -22,6 +22,10 @@ p{
 
 <c:set var="data" value="tokyo" />
 <c:set var="name" value="김병후" />
+
+
+<!-- JSTL function 태그 : JSP 교재 332~334 페이지까지  -->
+<!-- 특히 JSTL 함수 태그는 EL(expression language)의 출현으로 사용빈도가 낮아짐  -->
 
 다음 String의 길이는 ? <b>${data}</b> → <p> ${fn:length(data)}</p>
 
