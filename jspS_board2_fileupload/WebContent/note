@@ -1,0 +1,50 @@
+insert into mvcboard2 (
+bname,
+bpass,
+btitle,
+bcontent,
+bip,
+bdate,
+bhit,
+bfile)
+(
+select
+bname,
+bpass,
+btitle,
+bcontent,
+bip,
+bdate,
+bhit,
+bfile
+from mvcboard2);
+
+select * from mvcboard2;
+
+1 = 0
+2 = 10
+3 = 20
+4 = 30
+17 = 160
+35 = 340
+
+
+insert into mvcboard2 (
+bname,
+bpass,
+btitle,
+bcontent,
+bip,
+bdate,
+bhit)
+
+values
+
+(
+"abc",
+"1111",
+"cc",
+"ddd",
+"",
+now(),
+0);

@@ -1,0 +1,105 @@
+1.전체글보기 (get) list.do
+  //1-1 dao : 전체글 가져오기
+  //1-2 list.jsp로 페이지 넘기기
+
+2.글쓰기폼   (get) write_view.do
+  //2-1 dao : x
+  //2-2 write.jsp로 페이지 넘기기
+
+3.글쓰기     (post) write.do
+  //3-1 dao : 글쓰기 기능 (insert)
+  //3-2 list.jsp로 페이지 넘기기
+
+4.상세보기   (get) detail.do
+  //4-1 dao : 해당글번호의 데이터 가져오기
+  //4-1 detail.jsp로 페이지 넘기기
+
+5.수정,삭제  (get) pass_view.do
+  //5-1 dao : x
+  //5-2 detail.jsp로 페이지 넘기기   
+
+6.비번확인   (post)pass.do
+  //6-1 dao : 해당유저인지 판단
+  //6-2 command(delete.do / update_view.do)경로로
+      bno를 가지고 넘어가기로 페이지 넘기기
+
+7.삭제기능 (delete.do)
+  //7-1 dao : 삭제기능
+  //7-2 삭제후 list.jsp로
+
+8.수정폼   (update_view.do)
+  //8-1 dao : 해당글 가져와서 수정가능하게 데이터채우기
+  //8-2 modify.jsp로 파일 넘기기
+
+9.수정기능 (update.do)
+  //9-1 dao : 해당글번호의 데이터 수정하기
+  //9-2 detail.jsp로 파일 넘기기
+
+
+ㅁ MODEL
+	●DB		: bigdata3
+	●TABLE	: mvcboard1
+	●DTO		: Board1.java
+	●DAO		: Board1DAO.java
+	
+		0.생성자에서 DBMANAGER부르기
+		
+a		1.전체글 내림차순 : select * from mvcboard1  order by  bno  desc
+			public ArrayList<DTO> b1listAll()
+			return    : ArrayList<DTO>
+			parameter : x
+		
+a		2.전체글 개수 : select count(*) from mvcboard1
+			public int b1listCount()
+			return    : int
+			parameter : x
+		
+a		3.글쓰기 : insert into  mvcboard1  ( bname, bpass, btitle, bcontent ) values (  ?, ? , ?, ? )
+			public int b1write 맞으면 1 / 틀리면 -1
+			return    : int 
+			parameter : String bname, String bpass, String btitle, String bcontent, ※bdate, bip (날짜 아이피 자동삽입)
+		
+		4.상세페이지(해당글가져오기) : select * from mvcboard1   where  bno=?
+			수정페이지(해당글가져오기) : select * from mvcboard1   where  bno=?
+			public Board1 b1getInfo(int bno)
+			return    : Board1 (1개글의 데이터)
+			parameter : int bno
+		
+		5.비밀번호가 같은지 확인 :   select ? from  mvcboard1  where bno=?
+			public int b1check(int bno)
+			return    : int 맞으면 1 / 틀리면 -1
+			parameter : String bpass, int bno
+		 
+		6.수정기능 : update  mvcboard1 set btitle=? , bcontent=? where bno=?
+			public int b1update()
+			return    : int 맞으면 1 / 틀리면 -1
+			parameter : String btitle, String bcontent, int bno
+		               
+		7.삭제기능  : delete from mvcboard1  where bno=?
+			public int b1delete(int bno)
+			return    : int 맞으면 1 / 틀리면 -1
+			parameter : int bno
+		
+		8.조회수증가 : update  mvcboard1  set  bhit=bhit+1  where  bno=?
+			public int b1hit(int bno)
+			return    : int 맞으면 1 / 틀리면 -1
+			parameter : int bno
+
+
+	1.DBCP	: 셋팅
+	2.DRIVER MANAGER : DBMANAGER.java
+	
+ㅁ VIEW
+	0. index.jsp(액션테그를 이용해서 / board1.jsp 파일 삽입)
+	1. inc : header.jsp / footer.jsp / error404.jsp / error500.jsp
+	2. board1 : 
+		list.jsp / write.jsp / modify.jsp / pass.jsp / detail.jsp
+	
+ㅁ CONTROLLER
+	3. error페이지 설정  
+	4. view페이지에서 클릭
+
+
+	
+	
+	

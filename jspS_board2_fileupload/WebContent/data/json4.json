@@ -1,0 +1,24 @@
+{
+	"herostore": {
+		"menu": [
+			{
+				"name": "캡틴아메리카",
+				"year": "2014",
+				"character": "방패오빠",
+				"img": "visual001.jpg"
+			},
+			{
+				"name": "헐크",
+				"year": "2015",
+				"character": "초록인간",
+				"img": "visual002.jpg"
+			},
+			{
+				"name": "아이언맨",
+				"year": "2016",
+				"character": "부자",
+				"img": "visual003.jpg"
+			}
+		]
+	}
+}

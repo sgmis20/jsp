@@ -1,0 +1,56 @@
+bigdata3-
+create database bigdata3 default charset=utf8;
+create database exercise default charset=utf8;
+
+mvcboard1-
+create table mvcboard1(
+bno int not null primary key auto_increment comment '게시판번호',
+bname varchar(50) not null comment '글쓴이',
+bpass varchar(20) not null comment '비밀번호',
+btitle varchar(100) not null comment '제목',
+bcontent text not null comment '내용',
+bip varchar(20) not null comment 'IP',
+bdate datetime not null comment '등록날짜',
+bhit int not null default '0' comment '조회수')
+default charset=utf8;
+
+mvcboard2-
+create table mvcboard2(
+bno int not null primary key auto_increment comment '게시판번호',
+bname varchar(50) not null comment '글쓴이',
+bpass varchar(20) not null comment '비밀번호',
+btitle varchar(100) not null comment '제목',
+bcontent text not null comment '내용',
+bip varchar(20) not null comment 'IP',
+bdate datetime not null comment '등록날짜',
+bhit int not null default '0' comment '조회수',
+bfile varchar(200) comment '파일이름')
+default charset=utf8;
+
+members1-
+create table members1(
+userno int not null primary key auto_increment,
+userid varchar(20) not null,
+username varchar(20) not null,
+userpass varchar(20) not null,
+useremail varchar(50) not null,
+userip varchar(20) not null,
+userpost varchar(50) not null,
+userdate datetime not null
+)default charset=utf8;
+
+alter table members1 add userpost varchar(50) not null; ((members1에 post컬럼 1개 추가))
+
+movieboard-
+create table boardmovie(
+movieno int(11) not null primary key auto_increment, 
+moviedirector varchar(200) not null,
+movieimage varchar(200),
+movielink varchar(200) not null,
+moviepubDate varchar(200) not null,
+moviesubtitle varchar(200) not null,
+movietitle varchar(200) not null,
+movieuserRating double not null,
+movieactor varchar(200)
+)
+default charset=utf8;
